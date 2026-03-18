@@ -1,22 +1,25 @@
-# LangChain stack
+# LangChain ecosystem (modern split-package structure)
 langchain
 langchain-core
 langchain-community
 langchain-openai
 langchain-text-splitters
+langchain-huggingface
 
-# Vector store — pure Python, works on any Python version
-chromadb
-
-# LLM providers
+# LLM
 openai
 tiktoken
 
-# Embeddings
+# Embeddings + HuggingFace
 sentence-transformers
+transformers
+huggingface-hub
+
+# Vector store (pure Python, works on any Python version)
+chromadb
 
 # PDF loading
 pypdf
 
-# Streamlit (let Streamlit Cloud manage its own version)
+# Streamlit
 streamlit
