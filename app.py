@@ -6,7 +6,7 @@ from typing import List
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 try:
@@ -466,7 +466,7 @@ with st.sidebar:
             progress.progress(0.9, text="Building vector index…")
 
             if st.session_state.vectorstore is None:
-                st.session_state.vectorstore = FAISS.from_documents(new_docs, embeddings)
+                st.session_state.vectorstore = Chroma.from_documents(new_docs, embeddings)
             else:
                 st.session_state.vectorstore.add_documents(new_docs)
 
