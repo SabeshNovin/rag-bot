@@ -3,6 +3,7 @@ langchain
 langchain-core
 langchain-community
 langchain-openai
+langchain-text-splitters
 
 # Vector store — pure Python, works on any Python version
 chromadb
