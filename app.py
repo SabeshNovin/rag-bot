@@ -4,20 +4,14 @@ import tempfile
 from typing import List
 
 from langchain_community.document_loaders import PyPDFLoader
-try:
-    from langchain_text_splitters import RecursiveCharacterTextSplitter
-except ImportError:
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-try:
-    from langchain_community.llms import Ollama
-except ImportError:
-    from langchain_ollama import Ollama  # langchain-ollama>=0.1 fallback
+from langchain_community.llms import Ollama
 from langchain_openai import ChatOpenAI
-from langchain.schema import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage
 import hashlib
 
 # ── Page config ──────────────────────────────────────────────────────────────
