@@ -1,28 +1,21 @@
-# Core framework
-streamlit==1.35.0
+# LangChain stack
+langchain
+langchain-core
+langchain-community
+langchain-openai
 
-# LangChain stack — pin all three together to avoid version skew
-langchain==0.2.16
-langchain-core==0.2.38
-langchain-community==0.2.16
-langchain-openai==0.1.23
+# Vector store — pure Python, works on any Python version
+chromadb
 
-# LLM / embeddings providers
-openai==1.40.0
-tiktoken==0.7.0
-sentence-transformers==3.0.1
+# LLM providers
+openai
+tiktoken
 
-# Vector store
-faiss-cpu==1.8.0.post1
+# Embeddings
+sentence-transformers
 
-# PDF loading — PyPDFLoader depends on pypdf
-pypdf==4.3.1
+# PDF loading
+pypdf
 
-# HuggingFace (needed by sentence-transformers)
-huggingface-hub==0.24.5
-transformers==4.44.0
-torch==2.4.0
-
-# Misc transitive deps that Streamlit Cloud sometimes misses
-numpy==1.26.4
-pillow==10.4.0
+# Streamlit (let Streamlit Cloud manage its own version)
+streamlit
