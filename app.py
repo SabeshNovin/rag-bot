@@ -9,7 +9,10 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-from langchain_community.llms import Ollama
+try:
+    from langchain_community.llms import Ollama
+except ImportError:
+    from langchain_ollama import Ollama  # langchain-ollama>=0.1 fallback
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage, AIMessage
 import hashlib
